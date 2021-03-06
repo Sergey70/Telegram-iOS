@@ -11,6 +11,19 @@ There are several things we require from **all developers** for the moment.
 3. Please study our [**security guidelines**](https://core.telegram.org/mtproto/security_guidelines) and take good care of your users' data and privacy.
 4. Please remember to publish **your** code too in order to comply with the licences.
 
+
+# Install Script
+
+```python3 build-system/Make/Make.py \
+    --overrideXcodeVersion --overrideBazelVersion \
+    --bazel="$HOME/Sergey/MyProjects/Telegram-Fork/bazel-dist/bazel-arm" \
+    --cacheDir="$HOME/Sergey//MyProjects/Telegram-Fork/telegram-bazel-cache" \
+    generateProject \
+    --configurationPath="$HOME/Sergey/MyProjects/Telegram-Fork/telegram-configuration" \
+    --disableExtensions \
+    --disableProvisioningProfiles*
+```
+
 # Compilation Guide
 
 1. Install Xcode (directly from https://developer.apple.com/download/more or using the App Store).
