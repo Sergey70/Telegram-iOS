@@ -12,7 +12,16 @@ There are several things we require from **all developers** for the moment.
 4. Please remember to publish **your** code too in order to comply with the licences.
 
 
-# Install Script
+# Build on Apple Silicon
+
+***https://github.com/TelegramMessenger/Telegram-iOS/issues/467***
+1. Patch source bazel with ios_sim_arm64.patch - it apply ios_sim_arm64.patch
+2. Build patched bazel - bazel build --cpu=darwin_arm64 //src:bazel
+3. Get bazel executable from *bazel-bin/src/bazel*
+4. **chmod +x bazel** ->  **./bazel --version** -> *bazel no_version*
+5. Use patched bazel for /bazel-dist(#3)
+
+## Install Script
 
 ```python3 build-system/Make/Make.py \
     --overrideXcodeVersion --overrideBazelVersion \
